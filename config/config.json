@@ -1,7 +1,6 @@
 {
   "development": {
     "url": "postgres://kudhropt:ANVQ10wiaArV_ANdqIiSlrLktis6oTof@manny.db.elephantsql.com/kudhropt",
-
    "dialect": "postgres"
   },
   "test": {

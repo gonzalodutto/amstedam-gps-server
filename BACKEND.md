@@ -11,6 +11,8 @@
 | createdAt | Date      | yes      | Already added by model:generate |
 | updatedAt | Date      | yes      | Already added by model:generate |
 
+npx sequelize-cli model:generate --name doctor --attributes name:string,email:string,onDuty:boolean
+
 `doctor.hasMany(models.patients)`
 
 ### Patients
@@ -28,6 +30,8 @@
 | createdAt   | Date      | yes      | Already added by model:generate   |
 | updatedAt   | Date      | yes      | Already added by model:generate   |
 
+npx sequelize-cli model:generate --name patient --attributes firstName:string,lastName:string,gender:string,dateOfBirth:date,email:string,phoneNumber:integer,doctorId:integer
+
 `patient.belongsTo(models.doctor)`
 `patient.belongToMany(models.prescription)` **many to many**
 
@@ -40,9 +44,11 @@
 | key       | data type | required | notes                           |
 | --------- | --------- | -------- | ------------------------------- |
 | id        | Integer   | yes      | Already added by model:generate |
-| name      | Array     | yes      |                                 |
+| name      | String    | yes      |                                 |
 | createdAt | Date      | yes      | Already added by model:generate |
 | updatedAt | Date      | yes      | Already added by model:generate |
+
+npx sequelize-cli model:generate --name prescription --attributes name:String
 
 `precription.belongToMany(models.patient)`
 
@@ -55,6 +61,8 @@
 | prescriptionId | Integer   | yes      | Foreign key                     |
 | createdAt      | Date      | yes      | Already added by model:generate |
 | updatedAt      | Date      | yes      | Already added by model:generate |
+
+npx sequelize-cli model:generate --name PatientPrescription --attributes patientId:Integer,prescriptionId:Integer
 
 `patientPrescription.belongsTo(models.patient)`
 `patientPrescription.belongsTo(models.prescription)`
