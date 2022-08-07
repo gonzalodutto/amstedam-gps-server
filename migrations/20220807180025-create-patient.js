@@ -27,9 +27,9 @@ module.exports = {
       phoneNumber: {
         type: Sequelize.INTEGER,
       },
-      doctorId: {
-        type: Sequelize.INTEGER,
-      },
+      // doctorId: {
+      //   type: Sequelize.INTEGER,
+      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
