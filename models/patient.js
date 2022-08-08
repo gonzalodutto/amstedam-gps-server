@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       patient.belongsTo(models.doctor);
-      patient.belongToMany(models.prescription);
+      // patient.belongToMany(models.prescription);
     }
   }
   patient.init(
@@ -18,10 +18,9 @@ module.exports = (sequelize, DataTypes) => {
       firstName: DataTypes.STRING,
       lastName: DataTypes.STRING,
       gender: DataTypes.STRING,
-      dateOfBirth: DataTypes.DATE,
+      dateOfBirth: DataTypes.STRING,
       email: { type: DataTypes.STRING, allowNull: false, unique: true },
-      phoneNumber: DataTypes.INTEGER,
-      // doctorId: DataTypes.INTEGER,
+      phoneNumber: DataTypes.STRING,
     },
     {
       sequelize,

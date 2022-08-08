@@ -23,14 +23,14 @@ npx sequelize-cli model:generate --name doctor --attributes name:string,email:st
 | firstName   | String    | yes      |                                   |
 | lastName    | String    | yes      |                                   |
 | gender      | String    | yes      | default value is 0                |
-| dateOfBirth | Date      | yes      |                                   |
+| dateOfBirth | String    | yes      |                                   |
 | email       | String    | yes      |                                   |
-| phoneNumber | Integer   | yes      |                                   |
+| phoneNumber | String    | yes      |                                   |
 | doctorId    | Integer   | yes      | Foreign key (references a doctor) |
 | createdAt   | Date      | yes      | Already added by model:generate   |
 | updatedAt   | Date      | yes      | Already added by model:generate   |
 
-npx sequelize-cli model:generate --name patient --attributes firstName:string,lastName:string,gender:string,dateOfBirth:date,email:string,phoneNumber:integer,doctorId:integer
+npx sequelize-cli model:generate --name patient --attributes firstName:string,lastName:string,gender:string,dateOfBirth:string,email:string,phoneNumber:string,doctorId:integer
 
 `patient.belongsTo(models.doctor)`
 `patient.belongToMany(models.prescription)` **many to many**

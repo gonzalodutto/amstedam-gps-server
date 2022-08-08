@@ -9,27 +9,30 @@ module.exports = {
         type: Sequelize.INTEGER,
       },
       firstName: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       lastName: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       gender: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       dateOfBirth: {
-        type: Sequelize.DATE,
+        allowNull: false,
+        type: Sequelize.STRING,
       },
       email: {
+        allowNull: false,
         type: Sequelize.STRING,
         unique: true,
       },
       phoneNumber: {
-        type: Sequelize.INTEGER,
+        allowNull: false,
+        type: Sequelize.STRING,
       },
-      // doctorId: {
-      //   type: Sequelize.INTEGER,
-      // },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
